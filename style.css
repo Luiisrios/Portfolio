@@ -1,0 +1,261 @@
+:root {
+    --container-bg-color:rgb(46, 45, 45);
+    --left-bg-color:rgb(143, 142, 142);
+    --left-button-hover-color: rgba(241, 241, 247, 0.3);
+    --right-bg-color:rgb(143, 142, 142);
+    --right-button-hover-color: rgba(241, 241, 247, 0.3);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+}
+html, body{
+    padding:0;
+    margin:0;
+    
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* no horizontal scrolling*/
+}
+h1 {
+    font-size: 4rem;
+    color: rgb(48, 47, 47);
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-family: 'Roboto', sans-serif;
+    
+
+}
+.button{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top:40%;
+    height:2.5rem;
+    padding-top:1.3rem;
+    width:15rem;
+    text-align: center;
+    color:rgb(48, 47, 47);
+    border: rgb(100, 98, 98) solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transform: translateX(-50%);
+    font-family: 'Roboto', sans-serif;
+}
+.split.left .button:hover{
+    background-color: var(--left-button-hover-color);
+    border-color: var(--left-button-hover-color)
+}
+.split.right .button:hover{
+    background-color: var(--right-button-hover-color);
+    border-color: var(--right-button-hover-color)
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--container-bg-color);
+
+}
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    
+
+}
+.split.left{
+    left:0;
+    background: url('images/desk.jpg') center center no-repeat;
+    background-size: cover;
+}
+.split.right {
+    right:0;
+    background: url('images/resumepic.jpg') center center no-repeat;
+    background-size:cover;
+
+    
+
+}
+.split.left, .split.right{
+    transition:var(--speed) all ease-in-out;
+}
+
+
+.hover-left .left{
+    width: var(--hover-width);
+}
+.hover-left .right{
+    width: var(--other-width)
+
+}
+
+.hover-right .right{
+    width: var(--hover-width);
+}
+.hover-right .left{
+    width: var(--other-width);
+}
+
+@media(max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+
+    }
+    .button{
+        width: 12rem;
+    }
+}
+@media(max-height: 700px) {
+    .button{
+        top:70%;
+    }
+}
+
+/* Nav bar*/
+
+
+li a, button{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(148, 145, 145);
+    text-decoration: none;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background: rgb(219, 216, 216);
+    
+}
+.nav_links{
+    list-style: none;
+
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px
+}
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover{
+   color:black;
+}
+button{
+    padding: 9px 25px;
+    background-color: rgb(236, 233, 233);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-family: 'Roboto', sans-serif;
+}
+button:hover{
+    background-color:black;
+    border: none;
+}
+
+/* css for about me*/
+.aboutmebody{
+    background:url('images/whitewall.jpg');
+}
+.container1{
+    width: 50%;
+    height:80%;
+    margin:100px auto;
+    
+    position: relative;
+    border-radius: 15px;
+}
+.container1 h2{
+    text-align: center;
+    font-size: 40px;
+    color:rgb(46, 45, 45);
+    font-family: 'Roboto', sans-serif;
+
+}
+.container1 p{
+    text-align:center;
+    font-family: 'Roboto', sans-serif;
+}
+.container1 .biopic{
+    width:400px;
+    
+    clip-path:circle();
+    align-items: center;
+    text-align: center;
+    display: block;
+    
+    margin-left:auto;
+    margin-right: auto;
+
+}
+.container1 .media li{
+    text-decoration: none;
+    list-style:none;
+    margin: 10px 10px;
+    
+    display: inline-block;
+    font-size: 40px;
+    transition: .5s;
+    align-items: center;
+   
+    
+
+   
+}.container1 .media ul{
+    padding:0;
+    margin: 0;
+    text-align:center;
+}
+
+.container1 .media {
+   
+    left: 50%;
+    transform: translateX(-53%,-53%);
+}
+.container1 .media li:hover{
+    color:rosybrown;
+
+}
+.container1 .biopara p{
+    font-size:20px;
+    line-height:2em;
+    margin-bottom:32px
+}
+.container1 .media ul li a{
+    color: black;
+    font-size: 40px;
+}
+/*Resume Page CSS*/
+.resumebody{
+    background:url('images/whitewall.jpg');
+}
+.container2{
+    width: 50%;
+    height:80%;
+    margin:100px auto;
+    
+    position: relative;
+   
+}
+/*top header*/
+.topheader{
+    text-align: center;
+    background-color: rgb(165, 163, 163);
+    color:#3f3e3e;
+    font-family: 'Orelega One';
+    
+    
+}
+.biopara span{
+ font-weight: bold;
+}
